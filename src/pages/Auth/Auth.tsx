@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import { LoginForm, RegisterForm } from '../../components'
 
@@ -9,10 +9,8 @@ const Auth = () => {
   return (
     <section className="auth">
       <Switch>
-        <Route path="/" render={() => <Redirect to="/login" />} exact />
-        <Route path="/login" render={() => <LoginForm />} />
-        <Route path="/register" render={() => <RegisterForm />} />
-        <Redirect to="/login" />
+        <Route exact path="/signin" render={() => <LoginForm />} />
+        <Route exact path="/signup" render={() => <RegisterForm />} />
       </Switch>
     </section>
   )

@@ -51,7 +51,7 @@ const LoginForm = () => {
               Log in
             </Button>
           </Form.Item>
-          <Link className="auth__register-link" to="/register">
+          <Link className="auth__register-link" to="/signup">
             Register now!
           </Link>
         </Form>

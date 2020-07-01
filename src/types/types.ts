@@ -1,3 +1,3 @@
-export type Moke = {
-  asd: string
+export type TUser = {
+  fullname: string
 }

@@ -76,7 +76,7 @@ const LoginForm = () => {
                 Sign up
               </Button>
             </Form.Item>
-            <Link className="auth__register-link" to="/login">
+            <Link className="auth__register-link" to="/signin">
               Back to Log in
             </Link>
           </Form>
