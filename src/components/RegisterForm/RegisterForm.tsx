@@ -1,23 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FormikProps } from 'formik'
 
 import { Button, Block } from '../common'
 
 import { Form, Input } from 'antd'
 import { UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone } from '@ant-design/icons'
 
-import { FormikProps } from 'formik'
-
-interface FormValues {
-  email?: string
-  name?: string
-  password?: string
-  confirmPassword?: string
-}
+import { TFormValues } from '../../types/types'
 
 interface OtherProps {}
 
-const LoginForm = (props: OtherProps & FormikProps<FormValues>) => {
+const LoginForm = (props: OtherProps & FormikProps<TFormValues>) => {
   const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props
   const [registeredSuccess, setRegisteredSuccess] = React.useState(false)
 
