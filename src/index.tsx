@@ -7,10 +7,8 @@ import App from './App'
 import './styles/index.scss'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root'),
 )

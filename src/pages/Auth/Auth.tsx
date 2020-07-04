@@ -10,11 +10,7 @@ const Auth = () => {
     <section className="auth">
       <Switch>
         <Route exact path="/signin" render={() => <LoginForm />} />
-        <Route
-          exact
-          path="/signup"
-          render={() => <RegisterFormContainer email="" name="" password="" confirmPassword="" />}
-        />
+        <Route exact path="/signup" render={() => <RegisterFormContainer />} />
       </Switch>
     </section>
   )
