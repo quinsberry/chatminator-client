@@ -1,0 +1,117 @@
+@import '~styles/variables';
+
+.message {
+  $self: &;
+
+  display: flex;
+  margin-bottom: 15px;
+
+  &__avatar {
+    display: flex;
+    flex-direction: column-reverse;
+
+    img {
+      border-radius: 50px;
+      width: 33px;
+      height: 33px;
+      margin-right: 13px;
+      margin-bottom: 23px;
+    }
+  }
+
+  &__content {
+    max-width: 400px;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  &__bubble {
+    display: inline-block;
+    background: $blue;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.2);
+    border-radius: 12px 12px 12px 0;
+    padding: 15px;
+  }
+
+  &__attachments {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 5px;
+
+    &-item {
+      display: flex;
+      align-items: flex-end;
+      margin-right: 5px;
+      cursor: pointer;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__date {
+    display: block;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  &__text {
+    color: #fff;
+    line-height: 20px;
+  }
+
+  &.me {
+    display: flex;
+    flex-direction: row-reverse;
+
+    #{$self}__content {
+      margin-bottom: 15px;
+      text-align: right;
+
+      .read {
+        margin-right: 10px;
+      }
+    }
+
+    #{$self}__avatar {
+      img {
+        margin-right: 0;
+        margin-left: 13px;
+        margin-bottom: 37px;
+      }
+    }
+
+    #{$self}__info {
+      text-align: right;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    #{$self}__attachments {
+      padding-left: 0;
+      padding-right: 5px;
+    }
+
+    #{$self}__bubble {
+      background: #fff;
+      border: 1px solid #ececec;
+      box-shadow: 0px 4px 4px rgba(54, 116, 255, 0.2);
+      border-radius: 12px 12px 0 12px;
+
+      #{$self}__text {
+        color: $black;
+      }
+    }
+  }
+}
