@@ -7,8 +7,16 @@ import App from './App'
 import './styles/index.scss'
 
 ReactDOM.render(
+<<<<<<< HEAD
   <Router>
     <App />
   </Router>,
+=======
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>,
+>>>>>>> Before eject
   document.getElementById('root'),
 )

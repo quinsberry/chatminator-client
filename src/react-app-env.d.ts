@@ -64,6 +64,7 @@ declare module '*.module.sass' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
+<<<<<<< HEAD
 
 /// <reference types="node" />
 /// <reference types="react" />
@@ -131,3 +132,5 @@ declare module '*.module.sass' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
+=======
+>>>>>>> Before eject

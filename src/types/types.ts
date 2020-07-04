@@ -8,6 +8,7 @@ export type TMessageAttachment = {
   filename: string
   url: string
 }
+<<<<<<< HEAD
 
 export type TFormValues = {
   email: string
@@ -24,3 +25,5 @@ export type TFormErrors = {
   confirmPassword?: string
   [key: string]: string | undefined
 }
+=======
+>>>>>>> Before eject
