@@ -1,28 +1,30 @@
 import React from 'react'
 import cn from 'classnames'
+import { format, isToday } from 'date-fns'
 
 import { Time, MessageStatus } from '../'
 
 import './DialogItem.scss'
 
+import { TLastMessage } from '../../../types/types'
+
 type Props = {
-  user: {
-    avatar?: string
-    name: string
-    isOnline: boolean
-  }
-  message: {
-    text: string
-    hasRead?: boolean
-    created_at: string
-    isMe?: boolean
-  }
-  unread?: number
+  message: TLastMessage
+  isMe: boolean
 }
 
-const DialogItem: React.FC<Props> = ({ user, message, unread }) => {
+const DialogItem: React.FC<Props> = ({ message, isMe }) => {
+  const { created_at, text, hasRead, unread, user } = message
+
   const getMockAvatar = (username: string) => {
-    return ''
+    return 'https://source.unsplash.com/100x100/?random=4&people,face,portrait'
+  }
+
+  const getMessageTime = (time: Date) => {
+    if (isToday(time)) {
+      return format(time, 'HH:mm')
+    }
+    return format(time, 'MM.dd.yyyy')
   }
 
   return (
@@ -36,12 +38,13 @@ const DialogItem: React.FC<Props> = ({ user, message, unread }) => {
       <div className="dialogs__item-info">
         <div className="dialogs__item-info-top">
           <b>{user.name}</b>
-          <Time date={message.created_at} dialogItem />
+          <Time date={getMessageTime(created_at)} dialogItem />
+          {/* <span>{getMessageTime(message.created_at)}</span> */}
         </div>
         <div className="dialogs__item-info-bottom">
-          <p>{message.text}</p>
-          {message.isMe ? (
-            <MessageStatus isMe={true} hasRead={message.hasRead} />
+          <p>{text}</p>
+          {isMe ? (
+            <MessageStatus isMe={true} hasRead={hasRead} />
           ) : (
             <div
               className={cn('unread-icon', {

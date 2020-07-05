@@ -8,18 +8,9 @@ import './Message.scss'
 import HasBeenReadSvg from '../../../assets/icons/readed.svg'
 import HasNotBeenReadSvg from '../../../assets/icons/send.svg'
 
-import { TUser, TMessageAttachments } from '../../../types/types'
+import { TMessage } from '../../../types/types'
 
-type Props = {
-  avatar: string
-  user: TUser
-  text?: string
-  date?: string
-  isMe?: boolean
-  hasRead?: boolean
-  attachments?: TMessageAttachments
-  isTyping?: boolean
-}
+type Props = TMessage
 
 const Message: React.FC<Props> = ({
   avatar,
@@ -35,7 +26,7 @@ const Message: React.FC<Props> = ({
     <div
       className={cn('message', { me: isMe, typing: isTyping, image: attachments?.length === 1 })}>
       <div className="message__avatar">
-        <img src={avatar} alt={`${user.fullname} avatar`} />
+        <img src={avatar} alt={`${user.name} avatar`} />
       </div>
       <div className="message__content">
         <div className="message__info">

@@ -1,68 +1,47 @@
 import React from 'react'
 
 import { Message, DialogItem } from '../../components/common'
+import { Dialogs } from '../../components'
 
 import './Home.scss'
 
 const Home = () => {
   const userExample = {
-    fullname: 'Alice',
-  }
-
-  const user = {
-    name: 'Mary Curie',
-    avatar: 'https://source.unsplash.com/100x100/?random=20&face',
-    isOnline: true,
-  }
-
-  const message = {
-    text: 'Hi! I am Mary.',
-    created_at: 'Thu Jul 05 2020 13:12:44',
-  }
-  const user2 = {
-    name: 'Arnold Girra',
-    avatar: 'https://source.unsplash.com/100x100/?random=982&face',
-    isOnline: false,
-  }
-
-  const message2 = {
-    text: 'Hej! Im iron Arny! Nice to meet you (:',
-    created_at: 'Thu Jul 05 2020 14:18:44',
-  }
-  const user3 = {
-    name: 'John Smith',
-    avatar: 'https://source.unsplash.com/100x100/?random=1142&face',
-    isOnline: false,
-  }
-
-  const message3 = {
-    text: 'I writing to you because I have a deal. Write me back if you are interested.',
-    created_at: 'Thu Jul 05 2020 15:49:44',
+    name: 'Alice',
   }
 
   return (
     <section className="home">
-      <div className="dialogs">
-        <DialogItem user={user} message={message} unread={3} />
-        <DialogItem user={user2} message={message2} unread={33} />
-        <DialogItem user={user3} message={message3} unread={333} />
-        <DialogItem user={user3} message={message3} unread={3333} />
-      </div>
-      {/* <Dialogs
+      <Dialogs
         items={[
           {
+            _id: 'dwas21',
+            text: 'The last message of Mary in this dialog.',
+            created_at: new Date('Thu Jul 02 2020 20:40:44'),
             user: {
+              _id: 'ghnvb35n',
               name: 'Mary Curie',
-              avatar: null,
+              avatar: undefined,
+              isOnline: true,
             },
-            message: {
-              text: 'The last message of Mary in this dialog.',
-              hasRead: false,
-              created_at: new Date(),
+            unread: 33,
+          },
+          {
+            _id: '2ed1dasd2',
+            text: 'The last message of Mary in this dialog.',
+            hasRead: false,
+            created_at: new Date(),
+            user: {
+              _id: '2dqsda',
+              name: 'MJohn MacLane',
+              avatar: 'https://source.unsplash.com/100x100/?random=20&face',
+              isOnline: true,
             },
+            unread: 0,
           },
         ]}
-      /> */}
+        userId="2dqsda"
+      />
       {/* <Message
         avatar="https://source.unsplash.com/100x100/?random=20&face"
         text="Hi everyone!"

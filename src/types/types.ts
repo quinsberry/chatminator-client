@@ -1,5 +1,28 @@
 export type TUser = {
-  fullname: string
+  _id: string
+  name: string
+  avatar?: string
+  isOnline: boolean
+}
+
+export type TLastMessage = {
+  _id: string
+  text: string
+  created_at: Date
+  hasRead?: boolean
+  user: TUser
+  unread?: number
+}
+
+export type TMessage = {
+  avatar: string
+  user: TUser
+  text?: string
+  date?: Date
+  isMe?: boolean
+  hasRead?: boolean
+  attachments?: TMessageAttachments
+  isTyping?: boolean
 }
 
 export type TMessageAttachments = Array<TMessageAttachment>
