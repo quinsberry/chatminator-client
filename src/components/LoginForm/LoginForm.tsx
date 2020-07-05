@@ -15,10 +15,6 @@ interface OtherProps {}
 const LoginForm = (props: OtherProps & FormikProps<TLoginFormValues>) => {
   const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props
 
-  console.log(values.email)
-  console.log(values.email)
-  console.log(values.email)
-
   return (
     <div className="auth__content">
       <div className="auth__top">

@@ -1,0 +1,118 @@
+@import '~styles/variables';
+
+.dialogs {
+  width: 320px;
+  &__item {
+    $item: &;
+    display: flex;
+    padding: 13px 20px;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &:hover {
+      background: $dialog-item-bg-hover;
+    }
+
+    &.selected {
+      background: $dialog-item-selected-bg;
+    }
+
+    &-avatar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+
+    &.online {
+      #{$item}-avatar {
+        &:before {
+          position: absolute;
+          bottom: -2px;
+          right: 0px;
+          content: '';
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background-color: $green;
+          border: 3px solid #fff;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      padding-left: 10px;
+
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        b {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        span {
+          font-size: 12px;
+          opacity: 0.4;
+        }
+      }
+
+      &-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          padding-top: 2px;
+          opacity: 0.4;
+          font-size: 14px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 195px;
+          height: 1.2em;
+          white-space: nowrap;
+        }
+
+        .unread-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 3px 6px;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: $unread-icon-bg;
+
+          span {
+            font-size: 11px;
+            color: $unread-icon-clr;
+          }
+
+          &.twoNum {
+            border-radius: 30px;
+            width: 22px;
+          }
+
+          &.threeNum {
+            border-radius: 30px;
+            width: 26px;
+          }
+
+          &.fourNum {
+            border-radius: 30px;
+            width: 32px;
+          }
+        }
+      }
+    }
+  }
+}
