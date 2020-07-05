@@ -8,13 +8,18 @@ export type TMessageAttachment = {
   filename: string
   url: string
 }
-<<<<<<< HEAD
 
-export type TFormValues = {
+export type TRegistrationFormValues = {
   email: string
   name: string
   password: string
   confirmPassword: string
+  [key: string]: string
+}
+
+export type TLoginFormValues = {
+  email: string
+  password: string
   [key: string]: string
 }
 
@@ -25,5 +30,3 @@ export type TFormErrors = {
   confirmPassword?: string
   [key: string]: string | undefined
 }
-=======
->>>>>>> Before eject

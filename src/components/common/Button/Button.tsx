@@ -10,10 +10,7 @@ type Props = {
   type?: 'link' | 'text' | 'ghost' | 'default' | 'primary' | 'dashed' | undefined
   size?: 'large' | 'middle' | 'small'
   htmlType?: 'button' | 'submit' | 'reset' | undefined
-<<<<<<< HEAD
   onClick?: () => void
-=======
->>>>>>> Before eject
 }
 
 const Button: React.FC<Props> = (props) => {

@@ -1,17 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FormikProps } from 'formik'
 
 import { Button, Block } from '../common'
+import { validateField } from '../../utils/helpers'
 
 import { Form, Input } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
-import { Store } from 'rc-field-form/lib/interface'
+import { TLoginFormValues } from '../../types/types'
 
-const LoginForm = () => {
-  const onFinish = (values: Store) => {
-    console.log('Success:', values)
-  }
+interface OtherProps {}
+
+const LoginForm = (props: OtherProps & FormikProps<TLoginFormValues>) => {
+  const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props
+
+  console.log(values.email)
+  console.log(values.email)
+  console.log(values.email)
+
   return (
     <div className="auth__content">
       <div className="auth__top">
@@ -19,27 +26,31 @@ const LoginForm = () => {
         <p>Continue to you account</p>
       </div>
       <Block>
-        <Form
-          name="normal_login"
-          className="login-form"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}>
+        <Form className="login-form">
           <Form.Item
+            name="email"
             hasFeedback
-            validateStatus="success"
-            name="username"
-            rules={[{ required: true, message: 'Please input your Username!' }]}>
+            validateStatus={validateField('email', touched, errors)}
+            help={!touched.email ? null : errors.email}>
             <Input
               autoFocus
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
               prefix={<UserOutlined className="site-form-item-icon" />}
               size="large"
-              placeholder="Username"
+              placeholder="Email"
             />
           </Form.Item>
           <Form.Item
             name="password"
-            rules={[{ required: true, message: 'Please input your Password!' }]}>
+            hasFeedback
+            validateStatus={validateField('name', touched, errors)}
+            help={!touched.password ? null : errors.password}>
             <Input
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
               size="large"
@@ -48,7 +59,12 @@ const LoginForm = () => {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" size="large" htmlType="submit" className="login-form-button">
+            <Button
+              onClick={handleSubmit}
+              type="primary"
+              size="large"
+              htmlType="submit"
+              className="login-form-button">
               Log in
             </Button>
           </Form.Item>
