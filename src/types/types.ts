@@ -20,6 +20,7 @@ export type TMessage = {
   text?: string
   date?: Date
   isMe?: boolean
+  audio?: string
   hasRead?: boolean
   attachments?: TMessageAttachments
   isTyping?: boolean

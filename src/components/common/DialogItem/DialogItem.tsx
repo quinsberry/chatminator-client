@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import { format, isToday } from 'date-fns'
 
-import { Time, MessageStatus } from '../'
+import { Time, MessageStatus, Avatar } from '../'
 
 import './DialogItem.scss'
 
@@ -16,10 +16,6 @@ type Props = {
 const DialogItem: React.FC<Props> = ({ message, isMe }) => {
   const { created_at, text, hasRead, unread, user } = message
 
-  const getMockAvatar = (username: string) => {
-    return 'https://source.unsplash.com/100x100/?random=4&people,face,portrait'
-  }
-
   const getMessageTime = (time: Date) => {
     if (isToday(time)) {
       return format(time, 'HH:mm')
@@ -30,10 +26,7 @@ const DialogItem: React.FC<Props> = ({ message, isMe }) => {
   return (
     <div className={cn('dialogs__item', { online: user.isOnline })}>
       <div className="dialogs__item-avatar">
-        <img
-          src={user.avatar ? user.avatar : getMockAvatar(user.name)}
-          alt={`${user.name} avatar`}
-        />
+        <Avatar user={user} />
       </div>
       <div className="dialogs__item-info">
         <div className="dialogs__item-info-top">

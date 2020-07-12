@@ -70,7 +70,7 @@
     line-height: 20px;
   }
 
-  &.image {
+  &.message-image {
     #{$self}__attachments {
       padding-left: 0;
       &-item {
@@ -86,7 +86,7 @@
     }
   }
 
-  &.typing {
+  &.message-typing {
     #{$self}__avatar {
       img {
         margin-bottom: 10px;
@@ -99,11 +99,64 @@
     }
   }
 
-  &.me {
+  &.message-audio {
+    audio {
+      display: none;
+    }
+    #{$self}__bubble {
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    #{$self}__audio {
+      &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      &-btn {
+        button {
+          width: 28px;
+          height: 28px;
+          border-radius: 30px;
+          background: $message-audio-bg;
+          border: 0;
+          cursor: pointer;
+
+          img {
+            height: 13px;
+            margin-top: 2px;
+          }
+        }
+      }
+
+      &-duration {
+        color: #fff;
+        font-weight: 500;
+        opacity: 0.5;
+        font-size: 12px;
+      }
+
+      &-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: $message-audio-progress;
+        transition: width 0.3s ease;
+      }
+    }
+  }
+
+  &.message-me {
     display: flex;
     flex-direction: row-reverse;
 
-    &.image {
+    &.message-image {
       #{$self}__attachments {
         padding-right: 0;
       }

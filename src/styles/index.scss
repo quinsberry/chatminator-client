@@ -9,3 +9,9 @@ html,
   color: #202020;
   font-family: 'Roboto', sans-serif;
 }
+
+*,
+*:before,
+*:after {
+  outline: none;
+}
