@@ -1,9 +1,9 @@
 import { withFormik } from 'formik'
 
 import LoginForm from './LoginForm'
-import validateForm from '../../utils/validate'
+import validateForm from '@utils/validate'
 
-import { TLoginFormValues, TFormErrors } from '../../types/types'
+import { TLoginFormValues, TFormErrors } from 'types/types'
 
 interface OtherProps {}
 

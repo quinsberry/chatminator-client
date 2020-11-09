@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Message, DialogItem } from '../../components/common'
-import { Dialogs } from '../../components'
+import { Message, DialogItem } from '@components/common'
+import { Dialogs } from '@components'
 
 import './Home.scss'
 

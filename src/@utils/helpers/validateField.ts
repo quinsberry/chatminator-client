@@ -1,5 +1,5 @@
 import { FormikTouched } from 'formik'
-import { TLoginFormValues, TRegistrationFormValues, TFormErrors } from './../../types/types'
+import { TLoginFormValues, TRegistrationFormValues, TFormErrors } from 'types/types'
 
 type TTouched = FormikTouched<TLoginFormValues | TRegistrationFormValues>
 type TKey = 'email' | 'name' | 'password' | 'confirmPassword'

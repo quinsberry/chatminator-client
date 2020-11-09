@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import { LoginFormContainer, RegisterFormContainer } from '../../components'
+import { LoginFormContainer, RegisterFormContainer } from '@components'
 
 import './Auth.scss'
 

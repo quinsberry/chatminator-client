@@ -1,9 +1,9 @@
 import { withFormik } from 'formik'
 
 import RegisterForm from './RegisterForm'
-import validateForm from '../../utils/validate'
+import validateForm from '@utils/validate'
 
-import { TRegistrationFormValues, TFormErrors } from '../../types/types'
+import { TRegistrationFormValues, TFormErrors } from 'types/types'
 
 interface OtherProps {}
 

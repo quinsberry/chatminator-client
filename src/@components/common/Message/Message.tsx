@@ -3,14 +3,14 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import cn from 'classnames'
 
 import MessageStatus from '../MessageStatus/MessageStatus'
-import { convertCurrentTime } from '../../../utils/helpers'
+import { convertCurrentTime } from '@utils/helpers'
 
 import './Message.scss'
-import waveSvg from '../../../assets/icons/sound-wave.svg'
-import playSvg from '../../../assets/icons/play.svg'
-import pauseSvg from '../../../assets/icons/pause.svg'
+import waveSvg from '@assets/icons/sound-wave.svg'
+import playSvg from '@assets/icons/play.svg'
+import pauseSvg from '@assets/icons/pause.svg'
 
-import { TMessage } from '../../../types/types'
+import { TMessage } from 'types/types'
 
 type Props = TMessage
 type PropsAudio = {
@@ -74,11 +74,7 @@ const MessageAudio: React.FC<PropsAudio> = ({ audio }) => {
       <div className="message__audio-info">
         <div className="message__audio-btn">
           <button>
-            {isPlaying ? (
-              <img src={pauseSvg} alt="Pause svg icon" />
-            ) : (
-              <img src={playSvg} alt="Play svg icon" />
-            )}
+            {isPlaying ? <img src={pauseSvg} alt="Pause svg icon" /> : <img src={playSvg} alt="Play svg icon" />}
           </button>
         </div>
         <div className="message__audio-wave">
@@ -90,17 +86,7 @@ const MessageAudio: React.FC<PropsAudio> = ({ audio }) => {
   )
 }
 
-const Message: React.FC<Props> = ({
-  avatar,
-  user,
-  text,
-  date,
-  isMe,
-  audio,
-  hasRead,
-  attachments,
-  isTyping,
-}) => {
+const Message: React.FC<Props> = ({ avatar, user, text, date, isMe, audio, hasRead, attachments, isTyping }) => {
   return (
     <div
       className={cn('message', {
@@ -140,11 +126,7 @@ const Message: React.FC<Props> = ({
 
           <MessageStatus isMe={isMe} hasRead={hasRead} />
         </div>
-        {date && (
-          <span className="message__date">
-            {formatDistanceToNow(new Date(date), { addSuffix: true })}
-          </span>
-        )}
+        {date && <span className="message__date">{formatDistanceToNow(new Date(date), { addSuffix: true })}</span>}
       </div>
     </div>
   )

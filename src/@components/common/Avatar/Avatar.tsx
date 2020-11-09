@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { generateAvatarFromHash } from '../../../utils/helpers'
+import { generateAvatarFromHash } from '@utils/helpers'
 
 import './Avatar.scss'
 
-import { TUser } from '../../../types/types'
+import { TUser } from 'types/types'
 
 type Props = {
   user: TUser

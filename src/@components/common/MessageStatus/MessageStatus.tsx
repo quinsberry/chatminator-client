@@ -1,7 +1,7 @@
 import React from 'react'
 
-import HasBeenReadSvg from '../../../assets/icons/readed.svg'
-import HasNotBeenReadSvg from '../../../assets/icons/send.svg'
+import HasBeenReadSvg from '@assets/icons/readed.svg'
+import HasNotBeenReadSvg from '@assets/icons/send.svg'
 
 type Props = {
   isMe?: boolean

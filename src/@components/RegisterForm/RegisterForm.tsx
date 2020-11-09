@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FormikProps } from 'formik'
 
-import { Button, Block } from '../common'
-import { validateField } from '../../utils/helpers'
+import { Button, Block } from '@components/common'
+import { validateField } from '@utils/helpers'
 
 import { Form, Input } from 'antd'
 import { UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone } from '@ant-design/icons'
 
-import { TRegistrationFormValues } from '../../types/types'
+import { TRegistrationFormValues } from 'types/types'
 
 interface OtherProps {}
 

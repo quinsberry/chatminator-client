@@ -1,13 +1,9 @@
-import { TRegistrationFormValues, TLoginFormValues, TFormErrors } from '../types/types'
+import { TRegistrationFormValues, TLoginFormValues, TFormErrors } from 'types/types'
 
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/
 
-export default (
-  isAuth: boolean,
-  values: TRegistrationFormValues | TLoginFormValues,
-  errors: TFormErrors,
-) => {
+export default (isAuth: boolean, values: TRegistrationFormValues | TLoginFormValues, errors: TFormErrors) => {
   const rules: { [key: string]: (value: string) => void } = {
     email: (value) => {
       if (isAuth) {
@@ -44,8 +40,7 @@ export default (
         if (!value) {
           errors.password = 'Password is required'
         } else if (!regexPass.test(value)) {
-          errors.password =
-            'Password has to contain at least 1 number, 1 uppercase letter and 8 characters'
+          errors.password = 'Password has to contain at least 1 number, 1 uppercase letter and 8 characters'
         }
       }
     },

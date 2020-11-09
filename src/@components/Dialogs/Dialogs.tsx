@@ -1,11 +1,11 @@
 import React from 'react'
 import orderBy from 'lodash/orderBy'
 
-import { DialogItem } from '../common/'
+import { DialogItem } from '@components/common'
 
 import './Dialogs.scss'
 
-import { TLastMessage } from '../../types/types'
+import { TLastMessage } from 'types/types'
 
 type Props = {
   items: Array<TLastMessage>

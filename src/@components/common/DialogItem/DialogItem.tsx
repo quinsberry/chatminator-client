@@ -6,7 +6,7 @@ import { Time, MessageStatus, Avatar } from '../'
 
 import './DialogItem.scss'
 
-import { TLastMessage } from '../../../types/types'
+import { TLastMessage } from 'types/types'
 
 type Props = {
   message: TLastMessage

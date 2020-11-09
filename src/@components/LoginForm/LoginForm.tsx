@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FormikProps } from 'formik'
 
-import { Button, Block } from '../common'
-import { validateField } from '../../utils/helpers'
+import { Button, Block } from '@components/common'
+import { validateField } from '@utils/helpers'
 
 import { Form, Input } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
-import { TLoginFormValues } from '../../types/types'
+import { TLoginFormValues } from 'types/types'
 
 interface OtherProps {}
 
@@ -55,12 +55,7 @@ const LoginForm = (props: OtherProps & FormikProps<TLoginFormValues>) => {
           </Form.Item>
 
           <Form.Item>
-            <Button
-              onClick={handleSubmit}
-              type="primary"
-              size="large"
-              htmlType="submit"
-              className="login-form-button">
+            <Button onClick={handleSubmit} type="primary" size="large" htmlType="submit" className="login-form-button">
               Log in
             </Button>
           </Form.Item>
